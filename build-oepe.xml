@@ -1,0 +1,79 @@
+<project name="eclipse-distribution-builder-oepe" default="build-distros">
+	<property file="build.properties"/>
+
+	<taskdef name="builder" classpath="target/classes" classname="at.bestsolution.releng.distrobuilder.ant.DistroBuilderTaskDef" />
+	<target name="build-distros" description="Build distros">
+		<builder builddirectory="${basedir}" p2directorexecutable="${p2directorexecutable}"
+			targetdirectory="${basedir}/eclipse-target-platforms" staticreposdirectory="${basedir}/staticrepos"
+			distdirectory="${basedir}/generated-distributions" version="OEPE-with-complements">
+
+			<updatesite url="http://localhost:8081/nexus/content/groups/MyP2RepoProxy/" />
+
+			<!-- <updatesite url="http://download.eclipse.org/releases/kepler" /> -->
+			<!-- <updatesite url="http://download.eclipse.org/egit/updates"/> -->
+			<!-- <updatesite url="http://moreunit.sourceforge.net/update-site/" /> -->
+			<!-- <updatesite url="http://dist.sonar-ide.codehaus.org/eclipse-archives/3.1.1/" /> -->
+			<!-- <updatesite url="http://update.atlassian.com/atlassian-eclipse-plugin/rest/e3.7" /> -->
+			<!-- <updatesite url="http://bitstrings.github.com/m2e-connectors-p2/releases" /> -->
+			<!-- <updatesite url="http://download.eclipse.org/mylyn/releases/latest" /> -->
+			<!-- <updatesite url="https://repository.sonatype.org/content/repositories/forge-sites/m2e-extras/0.15.0/N/0.15.0.201206251206/" /> -->
+			<!-- <updatesite url="http://dist.springsource.org/release/AJDT/configurator/" /> -->
+			<!-- <updatesite url="http://plantuml.sourceforge.net/updatesitejuno" /> -->
+			<!-- <updatesite url="http://download.eclipse.org/tools/ajdt/43/update" /> -->
+			<!-- <updatesite url="http://ucdetector.sourceforge.net/update" /> -->
+			<!-- <updatesite url="http://update.zeroturnaround.com/update-site" /> -->
+			<!-- <updatesite url="http://download.sigasi.com/update/mousefeed/" /> -->
+			<!-- <updatesite url="http://pathtools.googlecode.com/svn/trunk/PathToolsUpdateSite" /> -->
+			<!-- <updatesite url="http://jd.benow.ca/jd-eclipse/update" /> -->
+			<!-- <updatesite url="http://download.oracle.com/otn_software/oepe/12.1.2.2/kepler/repository" /> -->
+
+			<!-- <updatesite url="file:///Users/slaurent/dev/eclipsemirror/technology/m2e/releases/"/> -->
+			<!-- <p2repository url="file:///Users/slaurent/dev/git/distrobuilder/repos/shared/oepe-12.1.2.2-kepler-repository.zip"/> -->
+
+			<installunit name="com.atlassian.connector.eclipse.bamboo.feature.group" />
+			<installunit name="com.atlassian.connector.eclipse.jira.feature.group" />
+			<!-- <installunit name="com.mousefeed" /> -->
+			<installunit name="jd.ide.eclipse.feature.feature.group" />
+			<installunit name="net.sourceforge.plantuml.feature.feature.group" />
+			<installunit name="org.bitstrings.eclipse.m2e.connectors.dependencypath.feature.feature.group" />
+			<installunit name="org.bitstrings.eclipse.m2e.connectors.jaxb2.feature.feature.group" />
+			<installunit name="org.bitstrings.eclipse.m2e.connectors.xmlbeans.feature.feature.group" />
+			<installunit name="org.eclipse.cvs.feature.group" />
+			<installunit name="org.eclipse.egit.feature.group" />
+			<installunit name="org.eclipse.jdt.feature.group" />
+			<installunit name="org.eclipse.egit.mylyn.feature.group" />
+			<installunit name="org.eclipse.jst.server_adapters.ext.feature.feature.group" />
+			<installunit name="org.eclipse.jst.server_adapters.feature.feature.group" />
+			<installunit name="org.eclipse.jst.server_ui.feature.feature.group" />
+			<installunit name="org.eclipse.m2e.feature.feature.group" />
+			<installunit name="org.eclipse.m2e.wtp.feature.feature.group" />
+			<installunit name="org.eclipse.wb.swing.feature.feature.group" />
+			<installunit name="org.eclipse.wst.common_ui.feature.feature.group" />
+			<installunit name="org.jibx.eclipse.feature.feature.group" />
+			<installunit name="org.moreunit.feature.group" />
+			<installunit name="org.sonar.ide.eclipse.jdt.feature.feature.group" />
+			<installunit name="org.sonar.ide.eclipse.m2e.feature.feature.group" />
+			<!--<installunit name="org.sonar.ide.eclipse.mylyn.feature.feature.group" />-->
+			<installunit name="org.sonatype.m2e.buildhelper.feature.feature.group" />
+			<installunit name="org.sonatype.m2e.mavenarchiver.feature.feature.group" />
+			<installunit name="org.ucdetector.feature.feature.group" />
+			<installunit name="org.zeroturnaround.eclipse.feature.feature.group" />
+			<installunit name="org.zeroturnaround.eclipse.m2e.feature.feature.group" />
+			<installunit name="org.zeroturnaround.eclipse.wtp.feature.feature.group" />
+			<installunit name="PathTools" />
+
+			<installunit name="org.eclipse.update.core" />
+			<!--<installunit name="org.eclipse.update.core.win32" />-->
+			<installunit name="org.eclipse.update.scheduler" />
+			<installunit name="org.eclipse.update.ui" />
+
+			<installunit name="org.eclipse.ajdt.feature.group" />
+			<installunit name="org.maven.ide.eclipse.ajdt.feature.feature.group" />
+			
+			<installunit name="oracle.eclipse.tools.weblogic.feature.group" />
+			<!-- <installunit name="oracle.eclipse.tools.maven.feature.group" /> -->
+
+		</builder>
+	</target>
+
+</project>
